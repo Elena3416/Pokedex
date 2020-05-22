@@ -1,0 +1,26 @@
+<div class="contenedor">
+    <h1>{{PokemonRecibido.name}}</h1>
+    <div class="main information">   
+        <div class="tipos">
+            <ul>
+                <li *ngFor="let types of PokemonRecibido.types">{{types.type.name}}</li>
+            </ul>
+        </div>   
+        <div class="Fila1">
+            <img [src]="PokemonRecibido.sprites.front_default" alt="">
+    
+            <ul>
+                <li>Estadisticas</li>
+                <li *ngFor="let estadistica of PokemonRecibido.stats">{{estadistica.stat.name}}
+                    : {{estadistica.base_stat}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="descripcion">
+            <h4>Descripcion</h4>
+            <p>{{descripcion.flavor_text}}</p>
+        </div>
+
+    </div>
+</div>

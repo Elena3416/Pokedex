@@ -1,0 +1,18 @@
+<mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{pokemonInput.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image 
+    [src]="pokemonInput.sprites.front_default" 
+    [alt]="pokemonInput.name">
+ 
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem">Item 1</mat-list-item>
+      </mat-list>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="GotoDescription(pokemonInput.id)" mat-stroked-button color="primary">Ver Mas....</button>
+    </mat-card-actions>
+  </mat-card>

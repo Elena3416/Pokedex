@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /** Material Components */
 import { MatSliderModule } from '@angular/material/slider';
-import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
+import { SidenavComponent } from './sidenav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { CardsComponent } from './components/cards/cards.component';

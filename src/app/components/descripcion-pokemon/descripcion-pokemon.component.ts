@@ -12,13 +12,14 @@ import { pluck, switchMap, map, filter } from "rxjs/operators"
 export class DescripcionPokemonComponent implements OnInit {
 
   public PokemonRecibido: any;
-  public descripcion:string;
+  public descripcion:any;
 
   constructor(private ActivatedRouter: ActivatedRoute, private http: HttpClient) {
-    this.ActivatedRouter.params
+    this.ActivatedRouter
+    .params
       .pipe(
         pluck("id"),
-        switchMap(id => this.GetPokemon(id)),
+        switchMap((id) => this.GetPokemon(id)),
         switchMap((pokemon) => this.http.get(pokemon.species.url)
           .pipe( 
             map((nuevaDataPokemon) => ({ ...pokemon, ...nuevaDataPokemon }))
@@ -28,7 +29,7 @@ export class DescripcionPokemonComponent implements OnInit {
       .subscribe((pokemon) => {
         this.PokemonRecibido = pokemon;
         this.descripcion = this.PokemonRecibido.flavor_text_entries
-         .find(descripcion => descripcion.language.name 
+         .find((descripcion) => descripcion.language.name 
           == "es"? descripcion.flavor_text:null);
 
         console.log(this.PokemonRecibido);

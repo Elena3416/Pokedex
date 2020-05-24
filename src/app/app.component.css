@@ -1,2 +1,8 @@
-
+mat-toolbar{
+    background: rgb(53, 147, 163);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 

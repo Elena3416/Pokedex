@@ -1,18 +1,22 @@
 <mat-card class="card">
-    <mat-card-header>
-      <mat-card-title>{{pokemonInput.name}}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image 
-    [src]="pokemonInput.sprites.front_default" 
-    [alt]="pokemonInput.name">
- 
-    <mat-card-content>
-      <mat-list role="list">
-        <mat-list-item role="listitem">Item 1</mat-list-item>
-      </mat-list>
-      
-    </mat-card-content>
-    <mat-card-actions>
-      <button (click)="GotoDescription(pokemonInput.id)" mat-stroked-button color="primary">Ver Mas....</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ pokemonInput.name }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="pokemonInput.sprites.front_default"
+    [alt]="pokemonInput.name"
+  />
+    <mat-chip-list>
+      <mat-chip *ngFor="let tipo of pokemonInput.types">{{tipo.type.name}}</mat-chip>
+    </mat-chip-list>
+  <mat-card-actions>
+    <button
+      (click)="GotoDescription(pokemonInput.id)"
+      mat-stroked-button
+      color="primary"
+    >
+      Ver Mas....
+    </button>
+  </mat-card-actions>
+</mat-card>

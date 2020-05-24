@@ -5,8 +5,9 @@ mat-grid-list {
 .pagination{
   display: flex;
   width: 100%;
-  background: green;
+  background: rgb(0, 113, 128);
   justify-content: space-around;
+  color: #fff;
 }
 
 .pagination p{
@@ -15,17 +16,17 @@ mat-grid-list {
 }
 
 mat-icon{
-  font-size: 50px;
+  font-size: 70px;
   height: 100%;
   cursor: pointer;
 }
 
 mat-spinner{
-  margin: 20px auto;
+  margin: 20px 45vw;
 }
 
 .fadeIn{
-  animation: animacion 5s ease-in-out;
+  animation: animacion .5s ease-in-out;
 }
 
 @keyframes animacion{

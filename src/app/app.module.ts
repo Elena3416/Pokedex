@@ -19,6 +19,7 @@ import {appRouting} from "./app.routes"
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatChipsModule} from '@angular/material/chips';
  
 /**
  * Importacion Metodo HTTP
@@ -47,7 +48,8 @@ import { GridCardsComponent } from './components/grid-cards/grid-cards.component
     HttpClientModule,
     MatListModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

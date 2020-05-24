@@ -8,16 +8,17 @@ import { Router } from '@angular/router';
 })
 export class CardsComponent implements OnInit {
 
-  @Input() pokemonInput:any;
+  @Input() pokemonInput: any;
 
-  constructor(private routes:Router) {
+  constructor(private routes: Router) {
   }
-//Se ejecuta cuando ya se termino la app
+  //Se ejecuta cuando ya se termino la app
   ngOnInit(): void {
     console.log(this.pokemonInput);
   }
 
-  public GotoDescription(id:number){
-   this.routes.navigate(["description-pokemon", id]);
+  public GotoDescription(id: number) {
+    this.routes.navigate(["description-pokemon", id]);
+    console.log(id);
   }
 }

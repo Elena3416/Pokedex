@@ -1,20 +1,19 @@
-<mat-spinner ngif="loading=false"></mat-spinner>
+<mat-spinner *ngIf="loading"></mat-spinner>
 
 <div *ngIf="!loading" class="fadeIn">
-  <mat-grid-list cols="3" rowHeight="45vh">
-    <mat-grid-tile *ngFor="let PokemonRecibido of ArrayPokemons"> 
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let PokemonRecibido of ArrayPokemons">
       <app-cards [pokemonInput]="PokemonRecibido"></app-cards>
-    </mat-grid-tile>    
-</mat-grid-list>
+    </mat-grid-tile>
+  </mat-grid-list>
 
-<div class="pagination">
-  <mat-icon (click)="paginationLeft()">arrow_left</mat-icon>
-  <p>{{indicePaginacion}}</p>
-  <mat-icon (click)="paginationRight()">arrow_right</mat-icon>
+  <div class="pagination">
+    <mat-icon (click)="paginationLeft()">arrow_left</mat-icon>
+    <p>{{ indicePaginacion }}</p>
+    <mat-icon (click)="paginationRight()">arrow_right</mat-icon>
+  </div>
 </div>
-</div>
 
-
-  <!--Input es el puente y sirve para pasar un elemento padre a un elemento hijo
+<!--Input es el puente y sirve para pasar un elemento padre a un elemento hijo
   nif - Se utiliza para mostrar u ocultar informacion
   -->

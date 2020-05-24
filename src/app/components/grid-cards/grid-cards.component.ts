@@ -27,7 +27,7 @@ export class GridCardsComponent {
     this.http.get(urlApi)
     .pipe(
       pluck("results"),
-      switchMap((PokemonsArray:any) => 
+      switchMap((PokemonsArray:Array<any>) => 
         from(PokemonsArray)
         .pipe(
           pluck("url"),
@@ -37,7 +37,7 @@ export class GridCardsComponent {
       ).subscribe((pokemon) => {
         this.ArrayPokemons.push(pokemon);
         //cuando ya se cargo toda la informacion de la api, ya no tiene que cargar el loading
-        if(this.ArrayPokemons.length == 20){
+        if(this.ArrayPokemons.length === 20){
           this.loading = false;
         } 
         console.log(this.loading);
@@ -54,8 +54,8 @@ export class GridCardsComponent {
 
   public paginationLeft(){
     if(this.indicePaginacion == 1) return;
-    const offset = this.indicePaginacion * 20;
     this.indicePaginacion--;
+    const offset = (this.indicePaginacion * 20)-20;
     const urlActualizado = `${this.urlApiPokemon}?offset=${offset}&limit=20`;
     this.getPokemons(urlActualizado);
     console.log(urlActualizado);

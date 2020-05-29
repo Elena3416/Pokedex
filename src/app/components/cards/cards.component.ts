@@ -14,11 +14,10 @@ export class CardsComponent implements OnInit {
   }
   //Se ejecuta cuando ya se termino la app
   ngOnInit(): void {
-    console.log(this.pokemonInput);
+
   }
 
   public GotoDescription(id: number) {
     this.routes.navigate(["description-pokemon", id]);
-    console.log(id);
   }
 }

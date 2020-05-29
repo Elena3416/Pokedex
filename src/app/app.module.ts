@@ -4,28 +4,31 @@ import { NgModule } from '@angular/core';
 /** Components */
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GridCardsComponent } from './components/grid-cards/grid-cards.component';
+import { ChangeColorTypeDirective } from './directivas/change-color-type.directive';
+import { SearchComponentComponent } from './components/search-component/search-component.component';
 
 /** Material Components */
 import { MatSliderModule } from '@angular/material/slider';
-import { SidenavComponent } from './sidenav.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { SidenavComponent } from './components/shared/sidenav.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { CardsComponent } from './components/cards/cards.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { DescripcionPokemonComponent } from './components/descripcion-pokemon/descripcion-pokemon.component';
-import {appRouting} from "./app.routes"
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatChipsModule} from '@angular/material/chips';
- 
+import { appRouting } from "./app.routes"
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatMenuModule } from '@angular/material/menu';
+
 /**
  * Importacion Metodo HTTP
  */
 import { HttpClientModule } from "@angular/common/http";
-import { GridCardsComponent } from './components/grid-cards/grid-cards.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { GridCardsComponent } from './components/grid-cards/grid-cards.component
     SidenavComponent,
     CardsComponent,
     DescripcionPokemonComponent,
-    GridCardsComponent
+    GridCardsComponent,
+    ChangeColorTypeDirective,
+    SearchComponentComponent
   ],
   imports: [
     appRouting,
@@ -49,7 +54,8 @@ import { GridCardsComponent } from './components/grid-cards/grid-cards.component
     MatListModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

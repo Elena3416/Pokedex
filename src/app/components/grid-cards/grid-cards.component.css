@@ -1,8 +1,8 @@
 mat-grid-list {
-    width: 100vw;
-  }
+  width: 100vw;
+}
 
-.pagination{
+.pagination {
   display: flex;
   width: 100%;
   background: rgb(0, 113, 128);
@@ -10,30 +10,30 @@ mat-grid-list {
   color: #fff;
 }
 
-.pagination p{
+.pagination p {
   line-height: 70px;
   font-size: 20px;
 }
 
-mat-icon{
+mat-icon {
   font-size: 70px;
   height: 100%;
   cursor: pointer;
 }
 
-mat-spinner{
+mat-spinner {
   margin: 20px 45vw;
 }
 
-.fadeIn{
-  animation: animacion .5s ease-in-out;
+.fadeIn {
+  animation: animacion 0.5s ease-in-out;
 }
 
-@keyframes animacion{
-  from{
+@keyframes animacion {
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }

@@ -1,6 +1,9 @@
 <mat-drawer-container class="container" autosize>
-  <mat-toolbar>Pokedex</mat-toolbar>
-  <app-sidenav></app-sidenav>
+  <mat-toolbar (click)="openSidebar = true">Pokedex</mat-toolbar>
+  <app-sidenav
+    (closeSidenav)="openSidebar = $event"
+    [openSidebar]="openSidebar"
+  ></app-sidenav>
   <div class="content">
     <router-outlet></router-outlet>
   </div>

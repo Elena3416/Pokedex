@@ -12,16 +12,18 @@ import { pluck, switchMap, map, filter } from "rxjs/operators"
 export class DescripcionPokemonComponent implements OnInit {
 
   public PokemonRecibido: any;
-  public descripcion:any;
+  public descripcion: any;
+  public loading: boolean = false;
 
   constructor(private ActivatedRouter: ActivatedRoute, private http: HttpClient) {
+    this.loading = true;
     this.ActivatedRouter
-    .params
+      .params
       .pipe(
         pluck("id"),
         switchMap((id) => this.GetPokemon(id)),
         switchMap((pokemon) => this.http.get(pokemon.species.url)
-          .pipe( 
+          .pipe(
             map((nuevaDataPokemon) => ({ ...pokemon, ...nuevaDataPokemon }))
           )
         )
@@ -29,14 +31,12 @@ export class DescripcionPokemonComponent implements OnInit {
       .subscribe((pokemon) => {
         this.PokemonRecibido = pokemon;
         this.descripcion = this.PokemonRecibido.flavor_text_entries
-         .find((descripcion) => descripcion.language.name 
-          == "es"? descripcion.flavor_text:null);
-
-        console.log(this.PokemonRecibido);
-        console.log(this.descripcion);
+          .find((descripcion) => descripcion.language.name
+            == "es" ? descripcion.flavor_text : null);
+        this.loading = false;
       });
-     }
-  
+  }
+
   ngOnInit(): void {
   }
 

@@ -8,7 +8,10 @@
     [alt]="pokemonInput.name"
   />
     <mat-chip-list>
-      <mat-chip *ngFor="let tipo of pokemonInput.types">{{tipo.type.name}}</mat-chip>
+      <mat-chip 
+      appChangeColorType 
+      [nameType]="typeGetData.type.name"
+      *ngFor="let typeGetData of pokemonInput.types">{{typeGetData.type.name}}</mat-chip>
     </mat-chip-list>
   <mat-card-actions>
     <button

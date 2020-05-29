@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  @Input() openSidebar: boolean;
+  @Output() closeSidenav = new EventEmitter<boolean>();
+  public Imagen: string = "./../../../assets/Img/pokedex.png";
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  public closeSidenavmethod() {
+    this.closeSidenav.emit(false);
   }
-
 }

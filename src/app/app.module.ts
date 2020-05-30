@@ -18,16 +18,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DescripcionPokemonComponent } from './components/descripcion-pokemon/descripcion-pokemon.component';
-import { appRouting } from "./app.routes"
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
+import { APP_ROUTES } from './app.routes';
+import { AboutComponent } from "./components/about/about.component"
 
-/**
- * Importacion Metodo HTTP
- */
+//  Importacion Metodo HTTP
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
@@ -38,11 +37,12 @@ import { HttpClientModule } from "@angular/common/http";
     DescripcionPokemonComponent,
     GridCardsComponent,
     ChangeColorTypeDirective,
-    SearchComponentComponent
+    SearchComponentComponent,
+    AboutComponent
   ],
   imports: [
-    appRouting,
     BrowserModule,
+    APP_ROUTES,
     BrowserAnimationsModule,
     MatSliderModule,
     MatSidenavModule,

@@ -4,11 +4,10 @@
     <img mat-card-image [src]="Imagen" alt="Imagen" />
   </mat-card>
   <hr />
-  <button mat-button color="basic">Home</button>
-  <button mat-button color="basic" [matMenuTriggerFor]="menu">Podekex</button>
-  <mat-menu #menu="matMenu">
-    <button mat-button color="basic">Video Games and Apps</button>
-    <button mat-button color="basic">Play Pokemon Events</button>
-  </mat-menu>
-  <button mat-button color="basic">News</button>
+  <button mat-button color="basic" routerLink="cards" (click)="Home()">Home</button>
+  <button mat-button color="basic" routerLink="search" (click)="EnviarBusqueda()">Seach Pokemon</button>
+  <button mat-button color="basic" routerLink="about" (click)="About()">About</button>
+  <br>
+  <div>
+  </div>
 </mat-drawer>

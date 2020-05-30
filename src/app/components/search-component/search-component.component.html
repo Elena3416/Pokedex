@@ -1,1 +1,32 @@
-<p>search-component works!</p>
+<h3>Buscar Pokemón</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <label for="">Busca tu pokemón</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Busca tu pokemon"
+          #inputSearch
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="!loading" class="fadeIn">
+        <mat-grid-list cols="1" rowHeight="45vh">
+          <mat-grid-tile>
+            <app-cards [pokemonInput]="PokemonRecibido"></app-cards>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- El error de que aparecian muchas emiciones era debido a que teniamos el evento keypres
+y ejecutaba el metodo donde se encontraba el front event, por lo tanto se creaba un frontevent
+por cada tecla que presionabamos, al eliminar dicho evento, solamente se instancia el fromevent
+que se encuentra en el ngAfterViewInit -->

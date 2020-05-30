@@ -10,9 +10,10 @@ export class ChangeColorTypeDirective implements OnInit {
   constructor(private el: ElementRef, private render: Renderer2) { }
 
   ngOnInit(): void {
+    this.AddBackground();
   }
 
-  @HostListener('click') AddBackground() {
+  @HostListener('onload') AddBackground() {
     this.render.setStyle(
       this.el.nativeElement,
       "background",

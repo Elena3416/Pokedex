@@ -1,0 +1,12 @@
+.container{
+    width: 80%;
+    margin-top: 5%;
+    font-size: 17px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

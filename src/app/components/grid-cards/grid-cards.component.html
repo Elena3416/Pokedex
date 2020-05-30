@@ -1,7 +1,7 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
 
 <div *ngIf="!loading" class="fadeIn">
-  <mat-grid-list cols="4" rowHeight="1:1">
+  <mat-grid-list cols="5" rowHeight="45vh">
     <mat-grid-tile *ngFor="let PokemonRecibido of ArrayPokemons">
       <app-cards [pokemonInput]="PokemonRecibido"></app-cards>
     </mat-grid-tile>

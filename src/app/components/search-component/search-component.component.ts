@@ -40,20 +40,20 @@ export class SearchComponentComponent implements OnInit, AfterViewInit {
     */
   ngAfterViewInit():void{
     this.SearchPokemon();
-  } 
+    } 
 
   //SearchPokemon: Metodo que nos ayudara a obtener la informacion del pokemon buscado por el rjxs
-  public SearchPokemon(){  
-   fromEvent(this.inputSearch.nativeElement, 'keyup')
+  public SearchPokemon(){ 
+    fromEvent(this.inputSearch.nativeElement, 'keyup')
     .pipe(
       debounceTime(1500),
       pluck('target', 'value'),
       switchMap((nombrePokemon) => this.http.get(`${this.url}${nombrePokemon}`))
-     )
-    .subscribe(
-      (value) => {
-      this.PokemonRecibido=value; 
-      this.loading = false;
+      )
+      .subscribe(
+        (value) => {
+        this.PokemonRecibido=value; 
+        this.loading = false;
     },
     (error) => this.SearchPokemon()
     );
@@ -65,4 +65,4 @@ export class SearchComponentComponent implements OnInit, AfterViewInit {
  * Cuando no encuenta el link para entrar marca 404
  * El callback error del subscribe, vuelve a ejecutar la funcion del searchpokemon, para volver
  * instanciar el fromevent y poder continuar con las busquedas.
- *  */ 
+ *  */

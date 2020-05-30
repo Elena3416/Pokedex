@@ -21,10 +21,6 @@ mat-icon {
   cursor: pointer;
 }
 
-mat-spinner {
-  margin: 20px 45vw;
-}
-
 .fadeIn {
   animation: animacion 0.5s ease-in-out;
 }

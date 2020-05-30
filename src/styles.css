@@ -10,4 +10,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .content {
     height: 100%;
   }
-  
+mat-spinner{
+    margin: 20px auto;
+} 
